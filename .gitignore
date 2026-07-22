@@ -1,0 +1,15 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Local testing artifacts
+*.tar.xz
+helix-*/
+micro
