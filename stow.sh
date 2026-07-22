@@ -21,7 +21,14 @@ fi
 
 if [[ $# -eq 0 ]]; then
     echo "Stowing all packages from $STOW_DIR into $TARGET..."
-    stow -d "$STOW_DIR" -t "$TARGET" */
+    # List immediate subdirectories of STOW_DIR as packages
+    mapfile -t PACKAGES < <(find "$STOW_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n')
+    if [[ ${#PACKAGES[@]} -eq 0 ]]; then
+        echo "No packages found in $STOW_DIR"
+        exit 0
+    fi
+    echo "Packages: ${PACKAGES[*]}"
+    stow -d "$STOW_DIR" -t "$TARGET" "${PACKAGES[@]}"
 else
     echo "Stowing packages: $*"
     stow -d "$STOW_DIR" -t "$TARGET" "$@"
