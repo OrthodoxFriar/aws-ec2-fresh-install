@@ -1,8 +1,0 @@
-# Helix editor configuration managed by GNU Stow
-# https://docs.helix-editor.com/configuration.html
-
-theme = "dark_plus"
-
-[editor]
-line-number = "relative"
-mouse = true
