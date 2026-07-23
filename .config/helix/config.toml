@@ -1,8 +1,14 @@
-# Minimal Helix config
+# Helix config
+
+theme = "gruvbox"          # or any theme you like
 
 [editor]
-line-number = "relative"
-mouse = false
+line-number = "relative"     # "absolute" | "relative" | "none"
+mouse = true
+auto-save = false
+bufferline = "multiple"      # show open buffers
+cursorline = true
+color-modes = true
 
 [keys.normal]
 C-s = ":w"          # Ctrl-s to save
@@ -10,3 +16,20 @@ C-q = ":q"          # Ctrl-q to quit
 
 [keys.insert]
 j = { k = "normal_mode" }   # jk to exit insert mode (common convenience)
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding"]
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.file-picker]
+hidden = false
