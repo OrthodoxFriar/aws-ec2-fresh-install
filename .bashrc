@@ -79,6 +79,10 @@ alias c='clear'
 # Edit this bashrc quickly
 alias bashrc='micro ~/.bashrc && source ~/.bashrc'
 
+# PowerShell aliases
+alias pwc='pwsh -NoProfile -Command'
+
+
 # ====================== FUNCTIONS ======================
 
 # Create directory and cd into it
