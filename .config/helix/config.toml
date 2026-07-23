@@ -1,0 +1,12 @@
+# Minimal Helix config
+
+[editor]
+line-number = "relative"
+mouse = false
+
+[keys.normal]
+C-s = ":w"          # Ctrl-s to save
+C-q = ":q"          # Ctrl-q to quit
+
+[keys.insert]
+j = { k = "normal_mode" }   # jk to exit insert mode (common convenience)

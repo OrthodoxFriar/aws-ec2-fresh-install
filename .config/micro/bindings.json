@@ -1,0 +1,10 @@
+{
+    "Ctrl-q": "Quit",
+    "Ctrl-s": "Save",
+    "Ctrl-w": "Quit",
+    "Ctrl-c": "Copy|CopyLine",
+    "Ctrl-v": "Paste",
+    "Ctrl-x": "Cut|CutLine",
+    "Ctrl-z": "Undo",
+    "Ctrl-y": "Redo"
+}

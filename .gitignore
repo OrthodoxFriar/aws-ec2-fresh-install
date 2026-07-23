@@ -11,5 +11,3 @@ logs/
 
 # Local testing artifacts
 *.tar.xz
-helix-*/
-micro
