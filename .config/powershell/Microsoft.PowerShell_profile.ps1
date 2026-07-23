@@ -1,9 +1,19 @@
 # Minimal PowerShell 7 profile for Linux
 # Location: $PROFILE
 
-# Simple, clean prompt (optional – remove if you prefer the default)
+# Custom Prompt indicates server
 function prompt {
-    "PS $($PWD.Path.Replace($HOME, '~'))$('>' * ($nestedPromptLevel + 1)) "
+    $path = $PWD.Path.Replace($HOME, '~')
+    $hostname = [System.Net.Dns]::GetHostName()
+
+    # Show [remote@hostname] only when connected via SSH
+    $remote = if ($env:SSH_CLIENT -or $env:SSH_CONNECTION) {
+        "[remote@$hostname] "
+    } else {
+        ""
+    }
+
+    "PS $remote$path$('>' * ($nestedPromptLevel + 1)) "
 }
 
 # Handy short function (example)
