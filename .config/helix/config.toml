@@ -1,6 +1,6 @@
 # Helix config
 
-theme = "gruvbox"          # or any theme you like
+theme = "gruvbox_dark"          # or any theme you like
 
 [editor]
 line-number = "relative"     # "absolute" | "relative" | "none"
